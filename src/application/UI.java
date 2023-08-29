@@ -71,14 +71,22 @@ public class UI {
 		}
 
 	}
+	
+	public static void pieceName() {
+		System.out.println("P = Pawn / B = Bishop / R = Rook / N = Knight / Q = Queen / K = King");
+	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
+		System.out.println();
+		pieceName();
+		System.out.println();
+		
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], false);
 			}
-			System.out.println();
+			System.out.println(" <-- Line");
 		}
 		System.out.println("  a b c d e f g h");
 	}
@@ -89,7 +97,7 @@ public class UI {
 			for (int j = 0; j < pieces.length; j++) {
 				printPiece(pieces[i][j], possibleMoves[i][j]);
 			}
-			System.out.println();
+			System.out.println(" <-- Line");
 		}
 		System.out.println("  a b c d e f g h");
 	}
